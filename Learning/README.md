@@ -8,7 +8,7 @@ This folder contains various materials for studying and practicing **digital des
 - **/docs/**  
   website link, and other documents for learning. (For detail see in inside folder's README.md) 
 
-- **/hdl-[name]/**  
+- **/src/hdl-[name]/**  
   Contains Verilog and SystemVerilog source files for practicing.  
   Examples:  
   - Ser2Par (Can run in modelsim)

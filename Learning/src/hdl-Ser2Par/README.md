@@ -7,7 +7,7 @@ This folder contains a **Serial-to-Parallel (Ser2Par)** design written in **Syst
 ## 📄 Files
 
 1. **`ser2par.sv`**  
-   - RTL design of a **Serial-to-Parallel converter**.  
+   - Code of a **Serial-to-Parallel converter** digital circuit.  
    - Converts serial input data (from SerDataIn) into parallel output (to ParDataOut[7:0])
    - **Ports:**
      - `RstB` : Active-low reset (clears register).  
