@@ -26,7 +26,11 @@ module ser2par #(
         if(!RstB) begin
             rParData <= 8'h00;
         end else begin
-            rParData <= {SerDataIn, rParData[7:1]};
+            if(SerDataEn) begin
+                rParData <= {SerDataIn, rParData[7:1]};
+            end else begin
+                rParData <= rParData;
+            end 
         end 
     end
     

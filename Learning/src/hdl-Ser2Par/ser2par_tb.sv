@@ -58,9 +58,11 @@ module ser2par_tb ();
         #(CLK_PERIOD);
         @(posedge Clk);
 
+        SerDataEn <= 0;
         SerDataIn <= 0;
         #(CLK_PERIOD);
         @(posedge Clk);
+         SerDataEn <= 1;
 
         SerDataIn <= 1;
         #(CLK_PERIOD);
