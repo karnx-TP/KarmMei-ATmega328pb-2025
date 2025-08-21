@@ -1,0 +1,612 @@
+/*
+    Copyright (c) 2024 SMIC
+    Filename:      S013LLLPSP_X256Y8D8_FF_1.65_125.lib
+    IP code:       S013LLLPSP
+    Version:       v0p2
+    CreateDate:    Sep 19, 2024
+
+    Synopsys Technology Library for Synchronous Single-Port SRAM
+    SMIC 0.13um Single-Port SRAM LL process
+
+    Configuration: -instname S013LLLPSP_X256Y8D8 -rows 256 -bits 8 -mux 8 
+    Redundancy: Off
+    Bit-Write: Off
+*/
+
+/* DISCLAIMER                                                                      */
+/*                                                                                 */  
+/*   SMIC hereby provides the quality information to you but makes no claims,      */
+/* promises or guarantees about the accuracy, completeness, or adequacy of the     */
+/* information herein. The information contained herein is provided on an "AS IS"  */
+/* basis without any warranty, and SMIC assumes no obligation to provide support   */
+/* of any kind or otherwise maintain the information.                              */  
+/*   SMIC disclaims any representation that the information does not infringe any  */
+/* intellectual property rights or proprietary rights of any third parties. SMIC   */
+/* makes no other warranty, whether express, implied or statutory as to any        */
+/* matter whatsoever, including but not limited to the accuracy or sufficiency of  */
+/* any information or the merchantability and fitness for a particular purpose.    */
+/* Neither SMIC nor any of its representatives shall be liable for any cause of    */
+/* action incurred to connect to this service.                                     */  
+/*                                                                                 */
+/* STATEMENT OF USE AND CONFIDENTIALITY                                            */  
+/*                                                                                 */  
+/*   The following/attached material contains confidential and proprietary         */  
+/* information of SMIC. This material is based upon information which SMIC         */  
+/* considers reliable, but SMIC neither represents nor warrants that such          */
+/* information is accurate or complete, and it must not be relied upon as such.    */
+/* This information was prepared for informational purposes and is for the use     */
+/* by SMIC's customer only. SMIC reserves the right to make changes in the         */  
+/* information at any time without notice.                                         */  
+/*   No part of this information may be reproduced, transmitted, transcribed,      */  
+/* stored in a retrieval system, or translated into any human or computer          */ 
+/* language, in any form or by any means, electronic, mechanical, magnetic,        */  
+/* optical, chemical, manual, or otherwise, without the prior written consent of   */
+/* SMIC. Any unauthorized use or disclosure of this material is strictly           */  
+/* prohibited and may be unlawful. By accepting this material, the receiving       */  
+/* party shall be deemed to have acknowledged, accepted, and agreed to be bound    */
+/* by the foregoing limitations and restrictions. Thank you.                       */  
+/*                                                                                 */  
+
+library(S013LLLPSP_X256Y8D8_FF_1.65_125) {
+	delay_model		: table_lookup;
+	time_unit		: "1ns";
+	voltage_unit		: "1V";
+	current_unit		: "1mA";
+	leakage_power_unit	: "1mW";
+	nom_process		: 1;
+	nom_temperature		: 125.000;
+	nom_voltage		: 1.650;
+	capacitive_load_unit	 (1,pf);
+
+	pulling_resistance_unit	        : "1kohm";
+
+	/* additional header data */
+	default_cell_leakage_power      : 0;
+	default_fanout_load		: 1;
+	default_inout_pin_cap		: 0.005;
+	default_input_pin_cap		: 0.005;
+	default_output_pin_cap		: 0.0;
+	default_max_transition		: 0.750;
+
+        /* default attributes */
+        default_leakage_power_density : 0.0;
+        slew_derate_from_library      : 1.000;
+        slew_lower_threshold_pct_fall : 10.000;
+        slew_upper_threshold_pct_fall : 90.000;
+        slew_lower_threshold_pct_rise : 10.000;
+        slew_upper_threshold_pct_rise : 90.000;
+        input_threshold_pct_fall      : 50.000;
+        input_threshold_pct_rise      : 50.000;
+        output_threshold_pct_fall     : 50.000;
+        output_threshold_pct_rise     : 50.000;
+
+ 	/* k-factors */
+ 	k_process_cell_fall             : 1;
+ 	k_process_cell_leakage_power    : 0;
+ 	k_process_cell_rise             : 1;
+ 	k_process_fall_transition       : 1;
+ 	k_process_hold_fall             : 1;
+ 	k_process_hold_rise             : 1;
+ 	k_process_internal_power        : 0;
+ 	k_process_min_pulse_width_high  : 1;
+ 	k_process_min_pulse_width_low   : 1;
+ 	k_process_pin_cap               : 0;
+ 	k_process_recovery_fall         : 1;
+ 	k_process_recovery_rise         : 1;
+ 	k_process_rise_transition       : 1;
+ 	k_process_setup_fall            : 1;
+ 	k_process_setup_rise            : 1;
+ 	k_process_wire_cap              : 0;
+ 	k_process_wire_res              : 0;
+	k_temp_cell_fall		: 0.000;
+	k_temp_cell_rise		: 0.000;
+	k_temp_hold_fall                : 0.000;
+	k_temp_hold_rise                : 0.000;
+	k_temp_min_pulse_width_high     : 0.000;
+	k_temp_min_pulse_width_low      : 0.000;
+	k_temp_min_period               : 0.000;
+	k_temp_rise_propagation         : 0.000;
+	k_temp_fall_propagation         : 0.000;
+	k_temp_rise_transition          : 0.0;
+	k_temp_fall_transition          : 0.0;
+	k_temp_recovery_fall            : 0.000;
+	k_temp_recovery_rise            : 0.000;
+	k_temp_setup_fall               : 0.000;
+	k_temp_setup_rise               : 0.000;
+	k_volt_cell_fall                : 0.000;
+	k_volt_cell_rise                : 0.000;
+	k_volt_hold_fall                : 0.000;
+	k_volt_hold_rise                : 0.000;
+	k_volt_min_pulse_width_high     : 0.000;
+	k_volt_min_pulse_width_low      : 0.000;
+	k_volt_min_period               : 0.000;
+	k_volt_rise_propagation         : 0.000;
+	k_volt_fall_propagation         : 0.000;
+	k_volt_rise_transition	        : 0.0;
+	k_volt_fall_transition	        : 0.0;
+	k_volt_recovery_fall            : 0.000;
+	k_volt_recovery_rise            : 0.000;
+	k_volt_setup_fall               : 0.000;
+	k_volt_setup_rise               : 0.000;
+
+
+        operating_conditions(ff_1.65_125.0) {
+		process	 : 1;
+		temperature	 : 125.000;
+		voltage	 : 1.650;
+		tree_type	 : balanced_tree;
+	}
+        default_operating_conditions : ff_1.65_125.0;
+	wire_load("sample") {
+		resistance	 : 1.6e-05;
+		capacitance	 : 0.0002;
+		area	 : 1.7;
+  		slope	 : 500;
+		fanout_length	 (1,500);
+	}
+        lu_table_template(S013LLLPSP_X256Y8D8_bist_mux_delay_template) {
+           variable_1 : input_net_transition;
+           variable_2 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        lu_table_template(S013LLLPSP_X256Y8D8_mux_mem_out_delay_template) {
+           variable_1 : input_net_transition;
+           variable_2 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        lu_table_template(S013LLLPSP_X256Y8D8_mem_out_delay_template) {
+           variable_1 : input_net_transition;
+           variable_2 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+	lu_table_template(S013LLLPSP_X256Y8D8_bist_mux_slew_template) {
+           variable_1 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+	lu_table_template(S013LLLPSP_X256Y8D8_mem_out_slew_template) {
+           variable_1 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+	lu_table_template(S013LLLPSP_X256Y8D8_clk_setup_constraint_template) {
+           variable_1 : related_pin_transition;
+           variable_2 : constrained_pin_transition;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+	lu_table_template(S013LLLPSP_X256Y8D8_constraint_template) {
+           variable_1 : related_pin_transition;
+           variable_2 : constrained_pin_transition;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        power_lut_template(S013LLLPSP_X256Y8D8_energy_template_clkslew_load) {
+           variable_1 : input_transition_time;
+           variable_2 : total_output_net_capacitance;
+               index_1 ("1000, 1001");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        power_lut_template(S013LLLPSP_X256Y8D8_energy_template_sigslew_load) {
+           variable_1 : input_transition_time;
+           variable_2 : total_output_net_capacitance;
+               index_1 ("1000, 1001");
+               index_2 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        power_lut_template(S013LLLPSP_X256Y8D8_energy_template_load) {
+           variable_1 : total_output_net_capacitance;
+               index_1 ("1000, 1001, 1002, 1003, 1004, 1005, 1006");
+        }
+        power_lut_template(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+           variable_1 : input_transition_time;
+               index_1 ("1000, 1001");
+        }
+        power_lut_template(S013LLLPSP_X256Y8D8_energy_template_sigslew) {
+           variable_1 : input_transition_time;
+               index_1 ("1000, 1001");
+        }
+	library_features(report_delay_calculation);
+	type (S013LLLPSP_X256Y8D8_DATA) {
+		base_type : array ;
+		data_type : bit ;
+		bit_width : 8;
+		bit_from : 7;
+		bit_to : 0 ;
+		downto : true ;
+	}
+	type (S013LLLPSP_X256Y8D8_ADDRESS) {
+		base_type : array ;
+		data_type : bit ;
+		bit_width : 11;
+		bit_from : 10;
+		bit_to : 0 ;
+		downto : true ;
+	}
+
+cell(S013LLLPSP_X256Y8D8) {
+	area		 : 101936.265;
+	dont_use	 : TRUE;
+	dont_touch	 : TRUE;
+        interface_timing : TRUE;
+	memory() {
+		type : ram;
+		address_width : 11;
+		word_width : 8;
+	}
+        bus(Q)   {
+                bus_type : S013LLLPSP_X256Y8D8_DATA;
+		direction : output;
+		max_capacitance : 0.860;
+                memory_read() {
+			address : A;
+		}
+                timing() {
+                        related_pin :   "CLK" ;
+                        timing_type : rising_edge ;
+                        timing_sense : non_unate;
+                        cell_rise(S013LLLPSP_X256Y8D8_mem_out_delay_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.000,0.030,0.060,0.120,0.280,0.560,0.860");
+                        values(\
+			"1.078, 1.115, 1.145, 1.204, 1.360, 1.633, 1.927",\
+                 	"1.087, 1.124, 1.154, 1.213, 1.369, 1.642, 1.935",\
+                 	"1.096, 1.133, 1.163, 1.222, 1.378, 1.652, 1.945",\
+                 	"1.109, 1.146, 1.177, 1.235, 1.392, 1.665, 1.958",\
+                 	"1.127, 1.164, 1.195, 1.253, 1.409, 1.683, 1.976",\
+                 	"1.140, 1.177, 1.208, 1.266, 1.422, 1.696, 1.989",\
+                 	"1.148, 1.185, 1.215, 1.274, 1.430, 1.703, 1.996");
+                        }
+                        rise_transition(S013LLLPSP_X256Y8D8_mem_out_slew_template) {
+                        index_1 ("0.000,0.030,0.060,0.120,0.280,0.560,0.860");
+			values("0.028, 0.089, 0.150, 0.275, 0.616, 1.215, 1.858");
+                        }
+                        cell_fall(S013LLLPSP_X256Y8D8_mem_out_delay_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.000,0.030,0.060,0.120,0.280,0.560,0.860");
+                        values(\
+			"1.074, 1.114, 1.143, 1.198, 1.345, 1.603, 1.878",\
+                 	"1.083, 1.123, 1.152, 1.207, 1.354, 1.611, 1.887",\
+                 	"1.092, 1.132, 1.161, 1.216, 1.363, 1.621, 1.896",\
+                 	"1.105, 1.145, 1.174, 1.229, 1.376, 1.634, 1.909",\
+                 	"1.123, 1.163, 1.192, 1.247, 1.394, 1.651, 1.927",\
+                 	"1.136, 1.176, 1.205, 1.260, 1.407, 1.665, 1.940",\
+                 	"1.144, 1.184, 1.213, 1.268, 1.415, 1.672, 1.948");
+                        }
+                        fall_transition(S013LLLPSP_X256Y8D8_mem_out_slew_template) {
+                        index_1 ("0.000,0.030,0.060,0.120,0.280,0.560,0.860");
+			values("0.036, 0.082, 0.128, 0.226, 0.500, 0.990, 1.516");
+                        }
+                }
+        }
+        pin(CLK)   {
+		direction : input;
+		capacitance : 0.153;
+                clock : true;
+                max_transition : 0.153;
+                min_pulse_width_high  : 0.200 ;
+                min_pulse_width_low   : 0.220 ;
+                min_period : 1.401 ;
+
+
+                internal_power(){
+                        when : "(!CEN & ! \
+                                (WEN) \
+                                ) \
+                                 ";
+                        rise_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("29.404, 29.404")
+                        }
+                        fall_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.000, 0.000")
+                        }
+                }
+                internal_power(){
+                        when : "(!CEN & \
+                                (WEN) \
+                                ) \
+                                 ";
+                        rise_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("23.516, 23.516")
+                        }
+                        fall_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.000, 0.000")
+                        }
+                }
+         internal_power(){
+                 when : "(CEN)";
+                        rise_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.021, 0.021")
+                        }
+                        fall_power(S013LLLPSP_X256Y8D8_energy_template_clkslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.000, 0.000")
+                        }
+                }
+        }
+
+        pin(CEN)   {
+                direction : input;
+                capacitance : 0.015;
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : setup_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.095, 0.118, 0.102, 0.117, 0.112, 0.113, 0.108",\
+			"0.104, 0.102, 0.110, 0.124, 0.115, 0.103, 0.099",\
+			"0.095, 0.088, 0.094, 0.105, 0.092, 0.089, 0.088",\
+			"0.086, 0.074, 0.077, 0.085, 0.080, 0.082, 0.077",\
+			"0.073, 0.067, 0.069, 0.075, 0.086, 0.065, 0.061",\
+			"0.072, 0.050, 0.052, 0.055, 0.094, 0.070, 0.047",\
+			"0.040, 0.026, 0.033, 0.036, 0.042, 0.043, 0.038"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.124, 0.132, 0.144, 0.166, 0.211, 0.257, 0.290",\
+			"0.256, 0.118, 0.127, 0.146, 0.220, 0.244, 0.299",\
+			"0.249, 0.102, 0.137, 0.155, 0.193, 0.231, 0.284",\
+			"0.239, 0.117, 0.125, 0.140, 0.191, 0.225, 0.277",\
+			"0.229, 0.111, 0.115, 0.127, 0.175, 0.230, 0.252",\
+			"0.209, 0.088, 0.093, 0.125, 0.172, 0.195, 0.247",\
+			"0.201, 0.074, 0.078, 0.111, 0.189, 0.212, 0.267"\
+                 );
+                        }
+                } 
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : hold_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000",\
+			"0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000"\
+                 );
+                        }
+               }
+        }
+       
+
+
+        pin(WEN){
+                direction : input;
+                capacitance : 0.007;
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : setup_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.043, 0.052, 0.062, 0.076, 0.093, 0.103, 0.107",\
+			"0.034, 0.043, 0.053, 0.068, 0.084, 0.094, 0.098",\
+			"0.025, 0.034, 0.044, 0.058, 0.075, 0.085, 0.089",\
+			"0.011, 0.021, 0.031, 0.045, 0.062, 0.072, 0.076",\
+			"0.000, 0.003, 0.013, 0.027, 0.044, 0.054, 0.057",\
+			"0.000, 0.000, 0.000, 0.014, 0.031, 0.041, 0.045",\
+			"0.000, 0.000, 0.000, 0.007, 0.023, 0.033, 0.037"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.036, 0.044, 0.057, 0.082, 0.126, 0.163, 0.188",\
+			"0.027, 0.036, 0.048, 0.073, 0.117, 0.154, 0.179",\
+			"0.018, 0.026, 0.039, 0.064, 0.108, 0.144, 0.170",\
+			"0.005, 0.013, 0.026, 0.051, 0.095, 0.131, 0.157",\
+			"0.000, 0.000, 0.008, 0.033, 0.077, 0.113, 0.139",\
+			"0.000, 0.000, 0.000, 0.020, 0.064, 0.101, 0.126",\
+			"0.000, 0.000, 0.000, 0.012, 0.056, 0.093, 0.118"\
+                 );
+                        }
+                } 
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : hold_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.356, 0.347, 0.337, 0.322, 0.306, 0.296, 0.291",\
+			"0.365, 0.356, 0.346, 0.331, 0.315, 0.305, 0.300",\
+			"0.374, 0.366, 0.355, 0.341, 0.324, 0.314, 0.310",\
+			"0.387, 0.379, 0.369, 0.354, 0.337, 0.327, 0.322",\
+			"0.405, 0.396, 0.386, 0.372, 0.355, 0.345, 0.340",\
+			"0.418, 0.409, 0.399, 0.385, 0.368, 0.358, 0.353",\
+			"0.426, 0.417, 0.407, 0.392, 0.376, 0.366, 0.361"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.362, 0.354, 0.342, 0.316, 0.273, 0.236, 0.211",\
+			"0.371, 0.363, 0.350, 0.325, 0.282, 0.245, 0.220",\
+			"0.381, 0.372, 0.360, 0.334, 0.291, 0.254, 0.229",\
+			"0.394, 0.385, 0.373, 0.348, 0.304, 0.267, 0.242",\
+			"0.411, 0.403, 0.391, 0.365, 0.322, 0.285, 0.260",\
+			"0.424, 0.416, 0.404, 0.378, 0.334, 0.298, 0.273",\
+			"0.432, 0.424, 0.411, 0.386, 0.342, 0.306, 0.281"\
+                 );
+                        }
+               }
+        }
+        bus(A)   {
+                bus_type : S013LLLPSP_X256Y8D8_ADDRESS;
+                direction : input;
+                capacitance : 0.018;
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : setup_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.290, 0.299, 0.307, 0.317, 0.332, 0.344, 0.351",\
+			"0.281, 0.290, 0.298, 0.308, 0.323, 0.335, 0.343",\
+			"0.272, 0.281, 0.288, 0.299, 0.314, 0.326, 0.333",\
+			"0.259, 0.268, 0.275, 0.286, 0.301, 0.313, 0.320",\
+			"0.241, 0.250, 0.258, 0.268, 0.283, 0.295, 0.302",\
+			"0.228, 0.237, 0.245, 0.255, 0.270, 0.282, 0.289",\
+			"0.220, 0.229, 0.237, 0.247, 0.262, 0.274, 0.282"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.290, 0.297, 0.306, 0.322, 0.348, 0.372, 0.388",\
+			"0.281, 0.288, 0.297, 0.313, 0.340, 0.363, 0.379",\
+			"0.271, 0.278, 0.287, 0.303, 0.330, 0.354, 0.370",\
+			"0.258, 0.265, 0.274, 0.290, 0.317, 0.340, 0.356",\
+			"0.240, 0.248, 0.257, 0.273, 0.299, 0.323, 0.339",\
+			"0.227, 0.235, 0.244, 0.260, 0.286, 0.310, 0.326",\
+			"0.220, 0.227, 0.236, 0.252, 0.279, 0.302, 0.318"\
+                 );
+                        }
+                } 
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : hold_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.326, 0.317, 0.309, 0.302, 0.297, 0.297, 0.299",\
+			"0.335, 0.326, 0.317, 0.311, 0.306, 0.306, 0.308",\
+			"0.344, 0.335, 0.327, 0.320, 0.315, 0.315, 0.318",\
+			"0.357, 0.348, 0.340, 0.333, 0.328, 0.329, 0.331",\
+			"0.375, 0.366, 0.357, 0.351, 0.346, 0.346, 0.348",\
+			"0.388, 0.379, 0.371, 0.364, 0.359, 0.359, 0.361",\
+			"0.396, 0.387, 0.378, 0.372, 0.367, 0.367, 0.369"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.336, 0.331, 0.325, 0.314, 0.293, 0.273, 0.261",\
+			"0.345, 0.340, 0.334, 0.323, 0.301, 0.282, 0.269",\
+			"0.355, 0.349, 0.343, 0.332, 0.311, 0.292, 0.279",\
+			"0.367, 0.362, 0.356, 0.345, 0.324, 0.305, 0.292",\
+			"0.385, 0.380, 0.374, 0.363, 0.342, 0.322, 0.309",\
+			"0.398, 0.393, 0.387, 0.376, 0.354, 0.335, 0.322",\
+			"0.406, 0.401, 0.395, 0.383, 0.362, 0.343, 0.330"\
+                 );
+                        }
+               }
+                internal_power(){
+                        when : "CEN";
+                        rise_power(S013LLLPSP_X256Y8D8_energy_template_sigslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.475, 0.475")
+                        }
+                        fall_power(S013LLLPSP_X256Y8D8_energy_template_sigslew) {
+                        index_1 ("0.000, 1.000");
+                        values ("0.475, 0.475")
+                        }
+                }
+        }
+        bus(D)   {
+                bus_type : S013LLLPSP_X256Y8D8_DATA;
+                memory_write() {
+                        address : A;
+                        clocked_on : "CLK";
+                }
+                direction : input;
+                capacitance : 0.009;
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : setup_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.302, 0.309, 0.315, 0.322, 0.327, 0.328, 0.327",\
+			"0.293, 0.300, 0.306, 0.313, 0.319, 0.319, 0.318",\
+			"0.284, 0.291, 0.297, 0.304, 0.309, 0.310, 0.309",\
+			"0.271, 0.278, 0.284, 0.291, 0.296, 0.297, 0.296",\
+			"0.253, 0.260, 0.266, 0.273, 0.278, 0.279, 0.278",\
+			"0.240, 0.247, 0.253, 0.260, 0.266, 0.267, 0.265",\
+			"0.232, 0.239, 0.245, 0.252, 0.258, 0.259, 0.257"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.283, 0.291, 0.304, 0.325, 0.360, 0.390, 0.411",\
+			"0.274, 0.283, 0.295, 0.316, 0.351, 0.381, 0.402",\
+			"0.264, 0.273, 0.285, 0.307, 0.341, 0.372, 0.393",\
+			"0.251, 0.260, 0.273, 0.294, 0.328, 0.359, 0.380",\
+			"0.233, 0.242, 0.255, 0.276, 0.311, 0.341, 0.362",\
+			"0.221, 0.229, 0.242, 0.263, 0.298, 0.328, 0.349",\
+			"0.213, 0.222, 0.234, 0.255, 0.290, 0.320, 0.341"\
+                 );
+                        }
+                } 
+                timing() {
+                        related_pin     : CLK;
+                        timing_type     : hold_rising ;
+                        rise_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.088, 0.081, 0.075, 0.068, 0.062, 0.061, 0.062",\
+			"0.096, 0.089, 0.083, 0.076, 0.070, 0.070, 0.071",\
+			"0.106, 0.099, 0.093, 0.086, 0.080, 0.079, 0.080",\
+			"0.119, 0.112, 0.106, 0.099, 0.093, 0.092, 0.093",\
+			"0.137, 0.129, 0.123, 0.117, 0.111, 0.110, 0.111",\
+			"0.150, 0.142, 0.136, 0.130, 0.123, 0.123, 0.124",\
+			"0.157, 0.150, 0.144, 0.137, 0.131, 0.131, 0.132"\
+                 );
+                        }
+                        fall_constraint(S013LLLPSP_X256Y8D8_constraint_template) {
+                        index_1 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        index_2 ("0.010,0.050,0.100,0.200,0.400,0.600,0.750");
+                        values(\
+			"0.107, 0.098, 0.086, 0.064, 0.030, 0.000, 0.000",\
+			"0.115, 0.107, 0.094, 0.073, 0.039, 0.008, 0.000",\
+			"0.125, 0.116, 0.104, 0.082, 0.048, 0.018, 0.000",\
+			"0.138, 0.129, 0.117, 0.096, 0.061, 0.031, 0.010",\
+			"0.156, 0.147, 0.135, 0.113, 0.079, 0.049, 0.027",\
+			"0.169, 0.160, 0.147, 0.126, 0.092, 0.062, 0.041",\
+			"0.176, 0.167, 0.155, 0.134, 0.100, 0.069, 0.048"\
+                 );
+                        }
+               }
+        }
+
+        cell_leakage_power : 0.071058;
+}
+}

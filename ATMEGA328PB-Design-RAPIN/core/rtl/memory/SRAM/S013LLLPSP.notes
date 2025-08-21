@@ -1,0 +1,105 @@
+
+***********************************************************************************
+*                                                                                 *
+*                        SMIC S013LLLPSP Release                                 *
+*                                                                                 *
+*                     ( SMIC DESIGN SERVICE CENTER )                              *
+*                                                                                 *
+***********************************************************************************
+***********************************************************************************
+** DISCLAIMER                                                                    **
+**                                                                               **
+**   SMIC hereby provides the quality information to you but makes no claims,    **
+** promises or guarantees about the accuracy, completeness, or adequacy of the   **
+** information herein. The information contained herein is provided on an "AS IS"**
+** basis without any warranty, and SMIC assumes no obligation to provide support **
+** of any kind or otherwise maintain the information.                            **
+**   SMIC disclaims any representation that the information does not infringe any**
+** intellectual property rights or proprietary rights of any third parties.SMIC  **
+** makes no other warranty, whether express, implied or statutory as to any      **
+** matter whatsoever,including but not limited to the accuracy or sufficiency of **
+** any information or the merchantability and fitness for a particular purpose.  **
+** Neither SMIC nor any of its representatives shall be liable for any cause of  **
+** action incurred to connect to this service.                                   **
+**                                                                               **
+**                                                                               **
+** STATEMENT OF USE AND CONFIDENTIALITY                                          **
+**                                                                               **
+**   The following/attached material contains confidential and proprietary       **
+** information of SMIC. This material is based upon information which SMIC       **
+** considers reliable, but SMIC neither represents nor warrants that such        **
+** information is accurate or complete, and it must not be relied upon as such.  **
+** This information was prepared for informational purposes and is for the use   **
+** by SMIC's customer only. SMIC reserves the right to make changes in the       **
+** information at any time without notice.                                       **
+**   No part of this information may be reproduced, transmitted, transcribed,    **
+** stored in a retrieval system, or translated into any human or computer        **
+** language, in any form or by any means, electronic, mechanical, magnetic,      **
+** optical, chemical, manual, or otherwise, without the prior written consent of **
+** SMIC. Any unauthorized use or disclosure of this material is strictly         **
+** prohibited and may be unlawful. By accepting this material, the receiving     **
+** party shall be deemed to have acknowledged, accepted, and agreed to be bound  **
+** by the foregoing limitations and restrictions. Thank you.                     **
+**                                                                               **
+***********************************************************************************
+
+-----------------------------------------------------------------------------------
+ Confidential
+ Copyright (C) 2013 SMIC
+ All rights reserved
+-----------------------------------------------------------------------------------
+
+1> IP INFORMATION:
+-----------------------------------------------------------------------------------
+
+        ++IP code       : S013LLLPSP
+        ++IP Type       : Standard Memory Compiler
+        ++Technology    : SMIC 0.13um LL Process
+        ++DK Version    : v0p2
+        ++Release date  : Nov 30, 2013
+
+2> PROCESS TECHNOLOGY DATA:
+-----------------------------------------------------------------------------------
+       
+        ++Calibre DRC Command File
+	SmicDR18P_cal013_cal011_mixlog_sali_p1mt5_1tm_12152533.drc	
+        V2.3_0P
+        ++Calibre LVS Command File
+	SmicSP5RR2R_cal013_LLRF_sali_p1mtx_1533_Pre1.2_20130220.lvs	
+        Pre1.2_20130220
+        ++SPICE Model Version 
+         Logic013_LL_1533_v1p2/ASCII/Hspice/l013ll_v1p2.lib
+	 Sram013_LL_1533_v1p1_TD-SM13-CL-2009v3R/l013ll_243_sram_v1p2.lib
+	
+
+3> UPDATE HISTORY:
+-----------------------------------------------------------------------------------
+   Version Date        What
+   ======= =========== ===========================================================
+   v0p1p1    2013/1/31 First release CDK version,  generate data sheet, verilog model,
+                       liberty model, lef, gds and netlist .
+   v0p2      2013-11-30 update gds for latest drc rule,
+                        based on improved simulation method,update lib min_period,
+			datasheet cycle time and generate range change from rows 512 to rows 320.
+      
+   ======= =========== ===========================================================
+
+4> POWER NETS:
+---------------------------------------------------------------------------------
+   POWER:  VDDP VDDC 
+   GROUND: VSS
+
+5> PROBLEMS & SOLUTIONS:
+---------------------------------------------------------------------------------------------------
+This section describes known problems and work-arounds as of the release date of this library.
+All problems and solutions please refer to the corresponding sram libraries.
+
+---------------------------------------------------------------------------------------------------
+
+6>APPLICATION NOTES:
+---------------------------------------------------------------------------------------------------
+when Apr, please add M5 strips(VDDP VDDC VSS) on the periphery layout. and add M5 strips(VDDP VDDC VSS) on the cell array layout. The M5 strip number (VDDP VDDC VSS) on the cell array will depend on the cell array height. 
+
+
+note: bitcell: 6T,RVT, 2.43um^2, provide by TD.
+      RVT periphery.
